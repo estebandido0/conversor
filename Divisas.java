@@ -7,7 +7,7 @@ public enum Divisas {
     KRW(1314.96),
     CLP(826.2);
 
-    double factor;
+    final double factor;
 
     Divisas(double factor) {
         this.factor = factor;
