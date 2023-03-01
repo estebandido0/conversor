@@ -63,6 +63,8 @@ public class ConversorGui {
         // Selectores de divisas
         this.selectorDivisas1.setBounds(24, 119, 162, 56);
         this.selectorDivisas2.setBounds(255, 119, 162, 56);
+        this.selectorDivisas1.setFocusable(true);
+        this.selectorDivisas2.setFocusable(true);
 
         // Campos de texto
         this.campoTexto1.setBounds(24, 193, 160, 56);
