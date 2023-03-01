@@ -15,20 +15,20 @@ public class ConversorGui {
     public JTextField campoTexto2 = new JTextField();
     public JButton botonConvertir = new JButton();
     public JButton botonIntercambiar = new JButton();
-    private final String[] divisas = { "USD", "EUR", "GBP", "JPY", "KRW", "CLP" };
-    public JComboBox<String> selectorDivisas1 = new JComboBox<>(divisas);
-    public JComboBox<String> selectorDivisas2 = new JComboBox<>(divisas);
+    public JComboBox<String> selectorDivisas1;
+    public JComboBox<String> selectorDivisas2;
     public JLabel tittle = new JLabel("Conversor Alura");
-    private JComponent[] components = { campoTexto1, campoTexto2, botonConvertir, botonIntercambiar, selectorDivisas1,
-            selectorDivisas2, tittle };
-
+    
     // Define colores
     private final Color GUI_PURPLE = new Color(0x526ED3);
     private final Color GUI_WHITE = new Color(0xF6F6F6);
     private final Color GUI_TEXT = new Color(0x191C30);
 
     // Constructor
-    public ConversorGui() {
+    public ConversorGui(String[] divisas) {
+
+        selectorDivisas1 = new JComboBox<>(divisas);
+        selectorDivisas2 = new JComboBox<>(divisas);
 
         // Comportamiento de la ventana
         this.frame.setLayout(null);
@@ -40,6 +40,7 @@ public class ConversorGui {
         this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         // Estilos generales
+        JComponent[] components = { campoTexto1, campoTexto2, botonConvertir, botonIntercambiar, selectorDivisas1, selectorDivisas2, tittle };
         for (JComponent component : components) {
             component.setFocusable(false);
             component.setFont(component.getFont().deriveFont(18f));

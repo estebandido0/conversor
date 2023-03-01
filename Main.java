@@ -5,12 +5,23 @@ public class Main {
     public static void main(String[] args) {
 
         // Instancia la ventana
-        ConversorGui gui = new ConversorGui();
+        final String[] divisas = { "USD", "EUR", "GBP", "JPY", "KRW", "CLP" };
+        ConversorGui gui = new ConversorGui(divisas);
 
         gui.campoTexto1.setText("ingresa valor");
         gui.botonConvertir.setText("CONVERTIR!");
 
-        // Agrega comportamiento del boton
+        // Funcionalidad de intercambiar divisa
+        gui.botonIntercambiar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Object selected1 = gui.selectorDivisas1.getSelectedItem();
+                gui.selectorDivisas1.setSelectedItem(gui.selectorDivisas2.getSelectedItem());
+                gui.selectorDivisas2.setSelectedItem(selected1);
+            }
+        });
+
+        // Funcionalidad de convertir
         gui.botonConvertir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -22,11 +33,9 @@ public class Main {
                 // Crea instancia moneda
                 Moneda moneda = new Moneda(monedaOrigen, divisaOrigen);
 
-                // Convierte la moneda y la muestra  
-                gui.campoTexto2.setText(""+moneda.convertir(divisaObjetivo));
+                // Convierte la moneda y la muestra
+                gui.campoTexto2.setText("" + moneda.convertir(divisaObjetivo));
             }
         });
-
-
     }
 }
