@@ -5,7 +5,6 @@ import java.awt.event.FocusListener;
 
 public class Main {
     public static void main(String[] args) {
-
         // Instancia la ventana
         final String[] divisas = { "USD", "EUR", "GBP", "JPY", "KRW", "CLP" };
         ConversorGui gui = new ConversorGui(divisas);
@@ -31,8 +30,9 @@ public class Main {
                 String divisaOrigen = gui.selectorDivisas1.getSelectedItem().toString();
                 String divisaObjetivo = gui.selectorDivisas2.getSelectedItem().toString();
                 
-                if (!(gui.campoTexto1.getText().trim().matches("^[1-9][0-9]$|^[0-9]*[.][0-9]+$"))) {
+                if (!(gui.campoTexto1.getText().trim().matches("^[1-9]+[0-9]*$|^[0-9]*[.][0-9]+$"))) {
                     gui.campoTexto1.setText(""); 
+                    gui.campoTexto2.setText("Error!"); 
                     return;
                 }
                 double monedaOrigen = Double.parseDouble(gui.campoTexto1.getText().trim());
