@@ -4,9 +4,17 @@
 
 El conversor de divisas es un reto propuesto por el programa [Oracle Next Education](https://www.oracle.com/cl/education/oracle-next-education/) en conjunto con [Alura Latam](https://www.aluracursos.com/), para aplicar los conocimientos adquiridos durante los cursos de Java.
 
+![alt text](/assets/preview.gif)
+
+## Requisitos
+
+El unico requisito para ejecutar el programa es tener java 8.
+
 ## Instalación
 
 ### Opción más rápida
+
+Es requerido java 8 para la ejecucion.
 
 La opción más rápida es descargar la última versión de `conversor.jar` en la sección de [releases](https://github.com/estebandido0/conversor/releases). Para luego ejecutarla mediante el comando
 
