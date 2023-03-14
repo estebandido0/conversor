@@ -6,8 +6,14 @@ import java.awt.event.FocusListener;
 
 public class Main {
     public static void main(String[] args) {
-        // Instancia la ventana
-        final String[] divisas = { "USD", "EUR", "GBP", "JPY", "KRW", "CLP" };
+
+        // Crea un string array con los valores del enum Divisas
+        String[] divisas = new String[Divisas.values().length];
+        for (int i = 0; i < divisas.length; i++) {
+            divisas[i] = Divisas.values()[i].name();
+        }
+
+        // Instancia la ventana con los valores Divisas
         ConversorGui gui = new ConversorGui(divisas);
 
         gui.campoTexto1.setForeground(Color.gray);
