@@ -38,7 +38,7 @@ public class Main {
                 String divisaOrigen = gui.selectorDivisas1.getSelectedItem().toString();
                 String divisaObjetivo = gui.selectorDivisas2.getSelectedItem().toString();
                 
-                if (!(gui.campoTexto1.getText().trim().matches("^[1-9]+[0-9]*$|^[0-9]*[.][0-9]+$"))) {
+                if (!(gui.campoTexto1.getText().trim().matches("^[0-9]*[.]?[0-9]+$"))) {
                     gui.campoTexto1.setText(""); 
                     gui.campoTexto2.setForeground(Color.red);
                     gui.campoTexto2.setText("Monto invalido!");
